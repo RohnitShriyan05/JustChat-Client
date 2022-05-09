@@ -43,7 +43,7 @@ export default function Chat(){
                 <button onClick={sidebarToggleHandle} className="md:hidden flex">{context.sidebarToggle? <MenuIcon/>: null}</button>
                 <h1 className='flex-1'>{context.currentChannel}</h1>
                 <button onClick={changeChannelName}><ModeEditIcon className='text-neutral-300 hover:text-white svgicon'/></button>
-                <button><PeopleIcon className='mx-4 text-neutral-300 hover:text-white svgicon'/></button>
+                <button><PeopleIcon className=' text-neutral-300 hover:text-white svgicon'/></button>
                 <button onClick={deleteChannel}><DeleteIcon className='text-neutral-300 hover:text-white svgicon'/></button>
              </div>
             <Message className='flex-1' id={context.currentChannelId} user={context.user.name}/>
