@@ -5,7 +5,9 @@
 *:focus {
     outline: none;
 }
-
+.svgicon{
+    transform: scale(0.75);
+}
 h1{
     font-size: 4vmin;
 }
