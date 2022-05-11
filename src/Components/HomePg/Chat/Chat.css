@@ -13,3 +13,6 @@
     padding-left: 2vmin;
     padding-right: 2vmin;
 }
+.svgicon{
+    transform: scale(0.75);
+}
