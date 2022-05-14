@@ -35,11 +35,13 @@ export default function Sidebar() {
       setChannelList(res.data);
     });
   };
+  const [loading, isLoading]= useState('Loading...');
   useEffect(() => {
     getChannels();
     const channel = pusher.subscribe("channels");
     channel.bind("newChannel", function (data) {
       getChannels();
+      if(data)isLoading(null);
     });
   },[context.currentChannel]);
   const sidebarToggleHandle = ()=>{
@@ -61,6 +63,7 @@ export default function Sidebar() {
           <KeyboardArrowDownIcon className="hover:text-white cursor-pointer svgicon" />
         </div>
         <div className="showchannels flex-1 flex flex-col items-start">
+          <h3 className={channelList.length===0 ? "px-8 text-neutral-400 sidebar__smalltext animate-pulse" : "hidden"}>{loading}</h3>
           {channelList.map((val, key) => {
             return (
               <button

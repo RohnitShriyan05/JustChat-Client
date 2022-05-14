@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {userContext} from '../../../App';
 import "./Chat.css";
 import ChatInput from "../Chat/ChatInput/ChatInput";
@@ -22,6 +22,7 @@ export default function Chat(){
     }
     const sidebarToggleHandle = ()=>{
         context.setSidebarToggle(!context.sidebarToggle);
+        setMenuVisited(true);
     }
     const deleteChannel= ()=>{
         const deletedChannel= prompt("THIS WILL DELELTE ALL THE DATA IN THE CHANNEL TO CONTINUE ENTER THE CURRENT CHANNEL NAME");
@@ -36,11 +37,11 @@ export default function Chat(){
             alert("Entered wrong name");
         }
     }
-
+    const [menuVisited, setMenuVisited]=useState(false);
     return(
         <div className="message__wrapper h-screen md:w-3/4 w-screen bg-chatbg flex flex-col text-white">
             <div className="chat__header border-b-2 border-sidebarunder flex items-center">
-                <button onClick={sidebarToggleHandle} className="md:hidden flex">{context.sidebarToggle? <MenuIcon/>: null}</button>
+                <button onClick={sidebarToggleHandle} className={menuVisited===false? "md:hidden flex animate-pulse":"md:hidden flex"}>{context.sidebarToggle? <MenuIcon className='text-neutral-300 hover:text-white svgicon'/>: null}</button>
                 <h1 className='flex-1'>{context.currentChannel}</h1>
                 <button onClick={changeChannelName}><ModeEditIcon className='text-neutral-300 hover:text-white svgicon'/></button>
                 <button><PeopleIcon className=' text-neutral-300 hover:text-white svgicon'/></button>
