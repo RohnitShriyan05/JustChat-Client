@@ -26,7 +26,7 @@ export default function ChatInput(props) {
           <input
             className="bg-transparent w-full h-full"
             value={input}
-            disabled={!props.channelName}
+            disabled={!props.channelNameId}
             onChange={(e) => setInput(e.target.value)}
             placeholder={`Message #${props.channelName}`}
             
