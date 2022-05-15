@@ -30,8 +30,7 @@ export default function Chat(){
             alert("Cannot delete channel:General");
         }
         else if(deletedChannel===context.currentChannel){
-            Axios.post("https://justchat-mern.herokuapp.com/delete/channel", {id:context.currentChannelId}).catch((err)=>console.log(err));
-            window.location.reload();
+            Axios.post("https://justchat-mern.herokuapp.com/delete/channel", {id:context.currentChannelId}).catch((err)=>console.log(err)).then(()=>window.location.reload());
         }
         else{
             alert("Entered wrong name");
