@@ -14,11 +14,14 @@ export default function Chat(){
 
 
     const changeChannelName = ()=>{
-        const updatedname = prompt("edit channel name:")
-        if(updatedname){
-           Axios.post(`https://justchat-mern.herokuapp.com/update/channel?id=${context.currentChannelId}`,{channelname:updatedname}).catch((err)=>console.log(err));
+        if(context.currentChannel==="General")alert("Cannot edit General");
+        else {
+            const updatedname = prompt("edit channel name:");
+            if(updatedname!=="" && updatedname){
+                Axios.post(`https://justchat-mern.herokuapp.com/update/channel?id=${context.currentChannelId}`,{channelname:updatedname}).catch((err)=>console.log(err));
+             }
+            context.setCurrentChannel(updatedname);
         }
-        context.setCurrentChannel(updatedname);
     }
     const sidebarToggleHandle = ()=>{
         context.setSidebarToggle(!context.sidebarToggle);
