@@ -8,6 +8,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import MenuIcon from '@mui/icons-material/Menu';
 import Axios from 'axios';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Div100vh from 'react-div-100vh';
 
 export default function Chat(){
     const context = useContext(userContext);
@@ -41,7 +42,7 @@ export default function Chat(){
     }
     const [menuVisited, setMenuVisited]=useState(false);
     return(
-        <div className="message__wrapper h-screen md:w-3/4 w-screen bg-chatbg flex flex-col text-white">
+        <Div100vh className="message__wrapper h-screen md:w-3/4 w-screen bg-chatbg flex flex-col text-white">
             <div className="chat__header border-b-2 border-sidebarunder flex items-center">
                 <button onClick={sidebarToggleHandle} className={menuVisited===false? "md:hidden flex animate-pulse":"md:hidden flex"}>{context.sidebarToggle? <MenuIcon className='text-neutral-300 hover:text-white svgicon'/>: null}</button>
                 <h1 className='flex-1'>{context.currentChannel}</h1>
@@ -51,6 +52,6 @@ export default function Chat(){
              </div>
             <Message className='flex-1' id={context.currentChannelId} user={context.user.name}/>
             <ChatInput className='bg-white' user={context.user} id={context.currentChannelId} channelName={context.currentChannel} username={context.name}/>
-        </div>
+        </Div100vh>
     );
 }

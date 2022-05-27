@@ -9,6 +9,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import Axios from "axios";
 import Pusher from "pusher-js";
 import CloseIcon from '@mui/icons-material/Close';
+import Div100vh from 'react-div-100vh';
 
 const pusher = new Pusher("fc844d9fd378358e8dcb", {
   cluster: "ap2",
@@ -48,7 +49,7 @@ export default function Sidebar() {
     context.setSidebarToggle(!context.sidebarToggle);
 }
   return (
-    <div className={context.sidebarToggle ? "sidebar__wrapper hidden md:flex flex-col h-screen w-1/4 bg-sidebg text-white border-r-2 border-sidebarunder" : "sidebar__wrapper flex flex-col h-screen w-full bg-sidebg text-white border-r-2 border-sidebarunder"}>
+    <Div100vh className={context.sidebarToggle ? "sidebar__wrapper hidden md:flex flex-col h-screen w-1/4 bg-sidebg text-white border-r-2 border-sidebarunder" : "sidebar__wrapper flex flex-col h-screen w-full bg-sidebg text-white border-r-2 border-sidebarunder"}>
       <div className="sidebar__header border-b-2 flex border-sidebarunder text-emerald-500">
         <h1 className="flex-1 flex items-center">JUSCHAT</h1>
         <button onClick={sidebarToggleHandle}>{context.sidebarToggle? null : <CloseIcon/>}</button>
@@ -98,6 +99,6 @@ export default function Sidebar() {
           <LogoutIcon className='svgicon'/>
         </button>
       </div>
-    </div>
+    </Div100vh>
   );
 }
