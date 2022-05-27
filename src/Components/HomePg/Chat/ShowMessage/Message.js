@@ -35,14 +35,14 @@ export default function Message(props) {
           <div className="relative flex items-center message__display justify-start " key={messages.id}>
             <Avatar alt={messages.user} src={messages.profilepic} className='realtive svgicon'/>
             <div className="relative px-2 ">
-              <h3 className="username text-neutral-300 text-sm">
+              <h3 className="username text-neutral-300">
                 {messages.user}
                 {"  "}
-                <span className="timestamp text-neutral-500 text-xs">
+                <span className="timestamp text-neutral-500">
                   {new Date(parseInt(messages.timestamp)).toDateString()}
                 </span>
               </h3>
-              <h2 className="message text-md">{messages.message}</h2>
+              <h2 className="message">{messages.message}</h2>
             </div>
           </div>
         );

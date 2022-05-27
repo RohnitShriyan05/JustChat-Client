@@ -20,15 +20,16 @@ export default function ChatInput(props) {
     <div className='chatinput__wrapper'>
       <div className="mt-2 ChatInput items-center text-gray-300 flex justify-between bg-chatbg rounded-2xl border-2 border-emerald-500 mb-2">
         <AddCircleIcon
-          className="hover:text-white cursor-pointer scale-75"
+          className="hover:text-white cursor-pointer svgicon"
         />
         <form action="" className="flex-1">
           <input
-            className="bg-transparent w-full h-full text-xl"
+            className="bg-transparent w-full h-full"
             value={input}
             disabled={!props.channelName}
             onChange={(e) => setInput(e.target.value)}
             placeholder={`Message #${props.channelName}`}
+            
           />
           <button
             type="submit"
@@ -41,7 +42,7 @@ export default function ChatInput(props) {
         </form>
         <div className="ChatInputIcons">
           <EmojiEmotionsIcon
-            className="hover:text-white cursor-pointer scale-75"
+            className="hover:text-white cursor-pointer svgicon"
           />
         </div>
       </div>
