@@ -1,10 +1,11 @@
 import Chat from "./Chat/Chat";
 import Sidebar from "./Sidebar/Sidebar";
+import Div100vh from 'react-div-100vh';
 export default function HomePg(){
     return(
-        <div className="home__wrapper flex">
+        <Div100vh className="home__wrapper flex ">
             <Sidebar/>
             <Chat/>
-        </div>
+        </Div100vh>
     );
 }

@@ -9,6 +9,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import Axios from "axios";
 import Pusher from "pusher-js";
 import CloseIcon from '@mui/icons-material/Close';
+import Div100vh from 'react-div-100vh';
 
 const pusher = new Pusher("fc844d9fd378358e8dcb", {
   cluster: "ap2",
@@ -48,22 +49,22 @@ export default function Sidebar() {
     context.setSidebarToggle(!context.sidebarToggle);
 }
   return (
-    <div className={context.sidebarToggle ? "sidebar__wrapper hidden md:flex flex-col h-screen w-1/4 bg-sidebg text-white border-r-2 border-sidebarunder" : "sidebar__wrapper flex flex-col h-screen w-full bg-sidebg text-white border-r-2 border-sidebarunder"}>
+    <Div100vh className={context.sidebarToggle ? "sidebar__wrapper hidden md:flex flex-col h-screen w-1/4 bg-sidebg text-white border-r-2 border-sidebarunder" : "sidebar__wrapper flex flex-col h-screen w-full bg-sidebg text-white border-r-2 border-sidebarunder"}>
       <div className="sidebar__header border-b-2 flex border-sidebarunder text-emerald-500">
-        <h1 className="flex-1 flex items-center">JUSCHAT</h1>
+        <h1 className="flex-1 flex items-center xl:text-3xl lg:text-2xl text-xl">JUSCHAT</h1>
         <button onClick={sidebarToggleHandle}>{context.sidebarToggle? null : <CloseIcon/>}</button>
       </div>
 
       <div className="sidebar__channels flex-1 flex flex-col">
-        <div className="channels__head flex flex-row border-b-2 border-sidebarunder px-4 py-1 items-center text-neutral-300">
-          <h2 className="flex-1 sidebar__mediumtext">Channels</h2>
+        <div className="channels__head flex flex-row border-b-2 border-sidebarunder px-4 py-1 items-center text-neutral-300 ">
+          <h2 className="flex-1 sidebar__mediumtext text-lg">Channels</h2>
           <button onClick={addChannelPrompt}>
             <AddIcon className="hover:text-white cursor-pointer svgicon" />
           </button>
           <KeyboardArrowDownIcon className="hover:text-white cursor-pointer svgicon" />
         </div>
         <div className="showchannels flex-1 flex flex-col items-start">
-          <h3 className={channelList.length===0 ? "px-8 text-neutral-400 sidebar__smalltext animate-pulse" : "hidden"}>{loading}</h3>
+          <h3 className={channelList.length===0 ? "px-8 text-neutral-400 animate-pulse" : "hidden"}>{loading}</h3>
           {channelList.map((val, key) => {
             return (
               <button
@@ -73,7 +74,7 @@ export default function Sidebar() {
                 }}
                 key={val.id}
               >
-                <h3 className="px-8 text-neutral-400 hover:text-white sidebar__smalltext">
+                <h3 className="px-8 text-neutral-400 hover:text-white text-md">
                   {"# " + val.name}
                 </h3>
               </button>
@@ -98,6 +99,6 @@ export default function Sidebar() {
           <LogoutIcon className='svgicon'/>
         </button>
       </div>
-    </div>
+    </Div100vh>
   );
 }

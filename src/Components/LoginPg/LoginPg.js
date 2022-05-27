@@ -5,6 +5,8 @@ import { auth, provider } from "../../firebase";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import SendIcon from "@mui/icons-material/Send";
+import Div100vh from 'react-div-100vh';
+
 export default function LoginPg() {
   const context = useContext(userContext);
   const setUser = context.setUser;
@@ -34,7 +36,7 @@ export default function LoginPg() {
     });
   };
   return (
-    <div className="h-screen w-full grid grid-rows-2 place-items-center bg-chatbg text-emerald-500 ">
+    <Div100vh className="w-full grid grid-rows-2 place-items-center bg-chatbg text-emerald-500 ">
       <div className="login__title flex items-center">
         <h1 className="login__title text-white">JUSCHAT</h1>
         <SendIcon
@@ -48,6 +50,6 @@ export default function LoginPg() {
       >
         Sign In
       </button>
-    </div>
+    </Div100vh>
   );
 }
