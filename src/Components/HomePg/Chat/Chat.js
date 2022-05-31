@@ -46,7 +46,7 @@ export default function Chat(){
             <div className="chat__header border-b-2 border-sidebarunder flex items-center">
                 <button onClick={sidebarToggleHandle} className={menuVisited===false? "md:hidden flex animate-pulse":"md:hidden flex"}>{context.sidebarToggle? <MenuIcon className='text-neutral-300 hover:text-white svgicon'/>: null}</button>
                 <h1 className='flex-1'>{context.currentChannel}</h1>
-                <button onClick={changeChannelName}><ModeEditIcon className='text-neutral-300 hover:text-white scale-75'/></button>
+                <button onClick={changeChannelName}><ModeEditIcon className='text-neutral-300 hover:text-white ' fontSize='medium'/></button>
                 <button><PeopleIcon className=' text-neutral-300 hover:text-white scale-75'/></button>
                 <button onClick={deleteChannel}><DeleteIcon className='text-neutral-300 hover:text-white scale-75'/></button>
              </div>

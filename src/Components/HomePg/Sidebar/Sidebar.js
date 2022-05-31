@@ -59,9 +59,9 @@ export default function Sidebar() {
         <div className="channels__head flex flex-row border-b-2 border-sidebarunder px-4 py-1 items-center text-neutral-300">
           <h2 className="flex-1 sidebar__mediumtext">Channels</h2>
           <button onClick={addChannelPrompt}>
-            <AddIcon className="hover:text-white cursor-pointer scale-75" />
+            <AddIcon className="hover:text-white cursor-pointer " fontSize='medium' />
           </button>
-          <KeyboardArrowDownIcon className="hover:text-white cursor-pointer scale-75" />
+          <KeyboardArrowDownIcon className="hover:text-white cursor-pointer " fontSize='medium' />
         </div>
         <div className="showchannels flex-1 flex flex-col items-start">
           <h3 className={channelList.length===0 ? "px-8 text-neutral-400 sidebar__smalltext animate-pulse" : "hidden"}>{loading}</h3>
@@ -85,18 +85,18 @@ export default function Sidebar() {
 
       <div className="connected border-t-2 border-sidebarunder text-green-500 flex items-center">
         <span>
-          <SignalCellularAltIcon className='scale-75'/>
+          <SignalCellularAltIcon fontSize='medium'/>
         </span>
         <h3>Connected</h3>
       </div>
 
       <div className="sidebar__profile border-t-2 border-sidebarunder flex text-left items-center">
-        <Avatar alt={context.user.name} src={context.user.profilepic} className='scale-75'/>
+        <Avatar alt={context.user.name} src={context.user.profilepic} fontSize='medium'/>
         <h3 className="flex-1 sidebar__mediumtext px-2 ">
           {context.user.name}
         </h3>
         <button onClick={logout} className="hover:text-emerald-500">
-          <LogoutIcon className='scale-75'/>
+          <LogoutIcon fontSize='medium'/>
         </button>
       </div>
     </Div100vh>
