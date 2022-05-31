@@ -33,12 +33,12 @@ export default function Message(props) {
       {message.map((messages, key) => {
         return (
           <div className="relative flex items-center message__display justify-start " key={messages.id}>
-            <Avatar alt={messages.user} src={messages.profilepic} className='realtive ' fontSize='medium'/>
+            <Avatar alt={messages.user} src={messages.profilepic} className='realtive '  fontSize='inherit'/>
             <div className="relative px-2 ">
               <h3 className="username text-neutral-300">
                 {messages.user}
                 {"  "}
-                <span className="timestamp text-neutral-500">
+                <span className="timestamp text-neutral-500 text-sm">
                   {new Date(parseInt(messages.timestamp)).toDateString()}
                 </span>
               </h3>
