@@ -20,7 +20,7 @@ export default function ChatInput(props) {
     <div className='chatinput__wrapper'>
       <div className="mt-2 ChatInput items-center text-gray-300 flex justify-between bg-chatbg rounded-2xl border-2 border-emerald-500 mb-2">
         <AddCircleIcon
-          className="hover:text-white cursor-pointer svgicon"
+          className="hover:text-white cursor-pointer scale-75"
         />
         <form action="" className="flex-1">
           <input
@@ -42,7 +42,7 @@ export default function ChatInput(props) {
         </form>
         <div className="ChatInputIcons">
           <EmojiEmotionsIcon
-            className="hover:text-white cursor-pointer svgicon"
+            className="hover:text-white cursor-pointer scale-75"
           />
         </div>
       </div>

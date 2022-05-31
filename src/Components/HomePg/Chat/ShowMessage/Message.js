@@ -33,7 +33,7 @@ export default function Message(props) {
       {message.map((messages, key) => {
         return (
           <div className="relative flex items-center message__display justify-start " key={messages.id}>
-            <Avatar alt={messages.user} src={messages.profilepic} className='realtive svgicon'/>
+            <Avatar alt={messages.user} src={messages.profilepic} className='realtive scale-75'/>
             <div className="relative px-2 ">
               <h3 className="username text-neutral-300">
                 {messages.user}

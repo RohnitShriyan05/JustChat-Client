@@ -6,7 +6,7 @@ import LoginPg from "./Components/LoginPg/LoginPg";
 export const userContext = React.createContext(null);
 function App() {
   const [user, setUser] = useState({});
-  const [login, setLogin] = useState(1);
+  const [login, setLogin] = useState(0);
   const [currentChannelId, setCurrentChannelId] = useState("");
   const [currentChannel, setCurrentChannel] = useState("Select a channel");
   const [sidebarToggle, setSidebarToggle] = useState(true);
